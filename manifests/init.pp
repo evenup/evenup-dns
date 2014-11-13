@@ -48,7 +48,6 @@ class dns (
     owner   => 'root',
     group   => 'root',
     mode    => '0444',
-    require => File['/etc/resolv.conf'],
     content => template('dns/hosts.erb'),
   }
 
