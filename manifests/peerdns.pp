@@ -29,27 +29,27 @@ define dns::peerdns (
 
   if $present {
     file_line { "ifcfg-${name}-peerdns-n":
-      ensure  => 'absent',
-      path    => "/etc/sysconfig/network-scripts/ifcfg-${name}",
-      line    => 'PEERDNS=no',
+      ensure => 'absent',
+      path   => "/etc/sysconfig/network-scripts/ifcfg-${name}",
+      line   => 'PEERDNS=no',
     }
 
     file_line { "ifcfg-${name}-peerdns-y":
-      ensure  => 'present',
-      path    => "/etc/sysconfig/network-scripts/ifcfg-${name}",
-      line    => 'PEERDNS=yes',
+      ensure => 'present',
+      path   => "/etc/sysconfig/network-scripts/ifcfg-${name}",
+      line   => 'PEERDNS=yes',
     }
   } else {
     file_line { "ifcfg-${name}-peerdns-y":
-      ensure  => 'absent',
-      path    => "/etc/sysconfig/network-scripts/ifcfg-${name}",
-      line    => 'PEERDNS=yes',
+      ensure => 'absent',
+      path   => "/etc/sysconfig/network-scripts/ifcfg-${name}",
+      line   => 'PEERDNS=yes',
     }
 
     file_line { "ifcfg-${name}-peerdns-n":
-      ensure  => 'present',
-      path    => "/etc/sysconfig/network-scripts/ifcfg-${name}",
-      line    => 'PEERDNS=no',
+      ensure => 'present',
+      path   => "/etc/sysconfig/network-scripts/ifcfg-${name}",
+      line   => 'PEERDNS=no',
     }
   }
 

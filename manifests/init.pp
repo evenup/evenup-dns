@@ -28,17 +28,20 @@
 class dns (
   $dns_search = $::domain,
   $nameservers = [ '127.0.0.1'],
+  $resolv = true,
 ) {
 
   package { 'bind-utils':
     ensure  => 'latest',
   }
 
-  file { '/etc/resolv.conf':
-    owner   => 'root',
-    group   => 'root',
-    mode    => '0444',
-    content => template('dns/resolv.conf.erb'),
+  if ( $resolv ) {
+    file { '/etc/resolv.conf':
+      owner   => 'root',
+      group   => 'root',
+      mode    => '0444',
+      content => template('dns/resolv.conf.erb'),
+    }
   }
 
   file { '/etc/hosts':
