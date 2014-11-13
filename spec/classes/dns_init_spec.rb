@@ -9,4 +9,9 @@ describe 'dns', :type => :class do
   it { should contain_file('/etc/resolv.conf') }
   it { should contain_file('/etc/hosts') }
 
+  context 'allow disabling resolv.conf' do
+    let(:params) { { :resolv => false } }
+    it { should_not contain_file('/etc/resolv.conf') }
+  end
+
 end
