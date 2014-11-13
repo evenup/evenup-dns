@@ -1,3 +1,5 @@
+20141113 v1.1.1
+  Fix dependency issue when resolv => false
 20141113 v1.1.0
   Managing resolv.conf is optional
 20130912 v1.0.2: 

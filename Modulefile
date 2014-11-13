@@ -1,5 +1,5 @@
 name 'evenup-dns'
-version '1.1.0'
+version '1.1.1'
 author 'Justin Lambert <jlambert@letsevenup.com>'
 license 'Apache 2.0'
 summary 'Manages local DNS resolution' 
