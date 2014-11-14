@@ -40,7 +40,7 @@ class dns::forwarder (
     group   => 'named',
     mode    => '0440',
     content => template('dns/named.conf.erb'),
-    require => Pachage['bind'],
+    require => Package['bind'],
   }
 
   service { 'named':
