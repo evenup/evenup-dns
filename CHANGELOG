@@ -1,3 +1,5 @@
+20141114 v1.2.0
+  Add simple bind dns forwarder class
 20141113 v1.1.1
   Fix dependency issue when resolv => false
 20141113 v1.1.0
