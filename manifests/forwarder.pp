@@ -40,11 +40,13 @@ class dns::forwarder (
     group   => 'named',
     mode    => '0440',
     content => template('dns/named.conf.erb'),
+    require => Pachage['bind'],
   }
 
   service { 'named':
-    ensure => 'running',
-    enable => true,
+    ensure  => 'running',
+    enable  => true,
+    require => File['/etc/named.conf'],
   }
 
 }
