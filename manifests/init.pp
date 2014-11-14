@@ -23,7 +23,7 @@
 #
 # === Copyright
 #
-# Copyright 2013 EvenUp.
+# Copyright 2014 EvenUp.
 #
 class dns (
   $dns_search = $::domain,

@@ -21,7 +21,7 @@
 #
 # === Copyright
 #
-# Copyright 2013 EvenUp.
+# Copyright 2014 EvenUp.
 #
 define dns::peerdns (
   $present  = false,
