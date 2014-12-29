@@ -1,7 +1,16 @@
 require 'spec_helper'
 
 describe 'dns::forwarder', :type => :class do
-  let(:params) { { :forwarders => '1.2.3.4;', :allow_query => '4.3.2.1/16;' } }
+  let(:facts) { {
+    :ipaddress => '1.2.3.4',
+    :fqdn => 'somehost.example.org',
+    :hostname => 'somehost'
+  } }
+
+  let(:params) { {
+    :forwarders => '1.2.3.4;',
+    :allow_query => '4.3.2.1/16;'
+  } }
 
   it { should create_class('dns::forwarder') }
 
