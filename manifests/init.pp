@@ -26,9 +26,9 @@
 # Copyright 2014 EvenUp.
 #
 class dns (
-  $dns_search = $::domain,
+  $dns_search  = $::domain,
   $nameservers = [ '127.0.0.1'],
-  $resolv = true,
+  $resolv      = true,
 ) {
 
   package { 'bind-utils':
@@ -50,5 +50,7 @@ class dns (
     mode    => '0444',
     content => template('dns/hosts.erb'),
   }
+
+  service { 'network': }
 
 }

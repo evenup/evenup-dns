@@ -8,6 +8,7 @@ describe 'dns', :type => :class do
   it { should contain_package('bind-utils') }
   it { should contain_file('/etc/resolv.conf') }
   it { should contain_file('/etc/hosts') }
+  it { should contain_service('network') }
 
   context 'allow disabling resolv.conf' do
     let(:params) { { :resolv => false } }
