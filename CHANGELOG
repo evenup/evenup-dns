@@ -1,3 +1,6 @@
+20150105 v1.3.0
+  Restart network services after network device config changes
+  Add initial acceptance tests
 20141114 v1.2.2
   Package typo fix
 20141114 v1.2.1
